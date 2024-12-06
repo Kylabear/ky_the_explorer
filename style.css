@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #7e57c2; /* Lavender */
     color: #fff;
     padding: 10px 0;
 }
@@ -25,6 +25,11 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff8a80; /* Pinkish */
 }
 
 main {
@@ -34,33 +39,85 @@ main {
 
 .intro {
     margin: 20px 0;
+    color: #7e57c2;
+    animation: fadeIn 2s;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #ff8a80; /* Pinkish */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.form-container {
-    display: flex;
-    justify-content: space-around;
+.cta-button:hover {
+    background-color: #ff5252;
+    transform: scale(1.1);
+}
+
+.buttons-container {
     margin: 20px 0;
 }
 
-.form-container div {
+.toggle-button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #7e57c2; /* Lavender */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #5e35b1;
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container {
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 45%;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.form-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #7e57c2; /* Lavender */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #5e35b1;
+    transform: scale(1.1);
 }
 
 footer {
-    background-color: #333;
+    background-color: #7e57c2; /* Lavender */
     color: #fff;
     padding: 10px 0;
     position: fixed;
@@ -72,14 +129,32 @@ footer {
 footer ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 footer ul li {
-    display: inline;
     margin: 0 10px;
 }
 
 footer ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #ff8a80; /* Pinkish */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
